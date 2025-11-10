@@ -10,5 +10,5 @@ typedef struct {
     double wpm;
 } Result;
 
-Result start_test(char words[][32], init total_words);
+Result start_test(char words[][128], init total_words);
 #endif
