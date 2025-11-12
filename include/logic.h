@@ -5,10 +5,10 @@
 typedef struct {
     int correct;
     int incorrect;
-    int totat;
+    int total;
     double accuracy;
     double wpm;
 } Result;
 
-Result start_test(char words[][128], init total_words);
+Result start_test(char words[][128], int total_words);
 #endif

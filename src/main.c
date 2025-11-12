@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "../include/file_handler.h"
+#include "../include/logic.h"
 
 int main(){
     char words[MAX_WORDS][MAX_WORD_LEN];
@@ -9,10 +10,12 @@ int main(){
         printf("no words loaded \n");
         return 1;
     }
-    printf("Loaded %d words: \n", count);
-    for (int i = 0; i < count && i < 10; i++){
-        printf("%s ", words[i]);
-    }
-    printf("\n");
+    Result result = start_test(words, count);
+    printf("\n=== Test Finished ===\n");
+    printf("Total Words Typed: %d\n", result.total);
+    printf("Correct: %d\n", result.correct);
+    printf("Incorrect: %d\n",result.incorrect);
+    printf("Accuracy: %.2f%%\n", result.accuracy);
+    printf("WPM: %.2f\n", result.wpm);
     return 0;
 }
