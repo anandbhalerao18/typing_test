@@ -2,18 +2,25 @@
 #define TUI_H
 
 #include <ncurses.h>
-#include<logic.h>
+#include "logic.h"
+#include "file_handler.h"
 
-void init_ui() // init ncurses and setup the screen
+// Initialize ncurses and screen setup
+void init_tui();
 
-int show_menu() // show the menu and return the user choice
+// Display the main menu (returns 1 if user starts test, 0 if exit)
+int show_main_menu();
 
-void show_instructions(); // shows up the instrct screen
+// Show simple typing instructions
+void show_instructions();
 
-void run_typing_ui(char words[][32], init total_words); // main typing test ui
+// Run the typing test interface
+Result run_typing_ui(char words[][MAX_WORD_LEN], int total_words);
 
-void show results(Result result);
+// Show the results screen
+void show_results_screen(Result result);
 
-void cleanup_ui();
+// Cleanup and restore terminal state
+void cleanup_tui();
 
 #endif
