@@ -1,0 +1,16 @@
+# Build artifacts
+build/
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+
+# Editor / OS files
+.vscode/
+*.swp
+.DS_Store
+
+# accidental nested repo metadata
+all/.git
